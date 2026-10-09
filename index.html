@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>260905 Show！音樂中心 MC 相沅 & 成淏</title>
+
+<!-- 💡 修正：補上 id="custom-favicon" -->
+<link id="custom-favicon" rel="icon" type="image/png" href="https://github.com/ald1a1mem.png">
+
+<script>
+// =========================================================================
+// ✨【大平台設定區】以後換新影片，只需要修改這裡！ ✨
+// =========================================================================
+
+// 1. YouTube 影片 ID（請填入網址 watch?v= 後面那一串 11 位數英文數字）
+const videoId = "dp8snz8I_sQ"; 
+
+// 2. 🐱 你的 GitHub 帳號名稱（User Name）
+const githubUsername = "ald1a1mem"; 
+
+// 3. 右側時間軸捷徑（顯示名稱、要跳轉的時間秒數）
+const timeLinks = [
+   { label: "按鈕標題", seconds: 0 },
+];
+
+// 4. 影片字幕設定（如不需滾動字幕，保持空陣列 [] 即可）
+const subtitles = [
+  { time: 1, text: "成淏：2、3 " },
+  { time: 2, text: "MC：大家好" },
+  { time: 3, text: "成淏：Show！音樂中心 MC BOYNEXTDOOR 成淏" },
+  { time: 5, endTime: 7,text: "相沅：ALPHA DRIVE ONE 相沅" },
+  { time: 10, endTime: 16,text: "MC：各位，我們兩位新 MC 正式成為 Show! 音樂中心的全新家人囉" },
+  { time: 19, text: "成淏：相沅啊，既然以後要請大家多多指教，不如我們各自來喊個超有氣勢的宣言吧" },
+  { time: 23, text: "相沅：好啊，其實到現在都還不敢相信自己真的當上 MC 了" },
+  { time: 26, text: "相沅：但我一定會很努力的，請大家多多關照" },
+  { time: 28, text: "相沅：音樂中心，我愛你" },
+  { time: 30, text: "成淏：我愛你" },
+  { time: 32, text: "成淏：好，我也一樣" },
+  { time: 33, text: "成淏：之前以特別 MC 的身份在音樂中心跟大家見過幾次面" },
+  { time: 36, text: "成淏：這次我똥벅 성호很榮幸地正式加入音樂中心了" },
+  { time: 41, text: "成淏：請大家多多給予支持與喜愛" },
+  { time: 43, text: "相沅：不過成淏啊" },
+  { time: 44, text: "相沅：比起嘴巴說說，我們直接用行動展現給大家看怎麼樣" },
+  { time: 47, text: "成淏：哇，我們也太有默契了吧" },
+  { time: 50, text: "成淏：相沅啊，你現在心情怎麼樣" },
+  { time: 51, endTime: 55,text: "相沅：我現在的心情完全是 VERY NICE ，music cue" },
+  { time: 79, text: "成淏：以後我們也會像這樣，不斷地把滿滿的正能量傳遞給大家" },
+  { time: 82, endTime: 86,text: "相沅：請大家多多期待我們這對同歲 MC 的火花，也請給我們滿滿的愛喔" },
+  { time: 87, endTime: 89,text: "成淏：愛你們" },
+
+  { time: 90, text: "成淏：那麼相沅" },
+  { time: 91, text: "成淏：我們現在要正式開始 Show! 音樂中心了吧" },
+  { time: 93, text: "相沅：好啊，今天的表演陣容可是一點都不輸給我們這對熱門 MC 呢" },
+  { time: 96, text: "相沅：大家都在關注的怪物新人Girls' Generation - HRS" },
+  { time: 99, text: "成淏：以及獨一無二的 solo 歌手TAEMIN" },
+  { time: 102, text: "相沅：還有像 MAGIC 般吸引著大家的 MONSTA X" },
+  { time: 105, text: "成淏：接著是帶領大家繼續享受精彩表演的 DINO" },
+  { time: 108, text: "相沅：還有開啟全新篇章的 TEN 也正等著大家" },
+  { time: 112, text: "成淏：不只如此 還有舞台女王請夏" },
+  { time: 114, text: "相沅：以及展現全新色彩的權恩妃也將帶來演出" },
+  { time: 118, text: "相沅：大家千萬不要錯過了" },
+  { time: 119, endTime: 126,text: "成淏：那麼在精彩舞台之前先來看看 9 月第一週 Show! 音樂中心 M-CHART 的本週一位候補三組吧" },
+  { time: 130, endTime: 131,text: "相沅：BIGBANG" },
+  { time: 133, endTime: 134,text: "相沅：ALPHA DRIVE ONE" },
+  { time: 136, endTime: 137,text: "相沅：NCT 127" },
+  { time: 141, text: "成淏：決定一位的方式如下，簡訊請發送至 #0505" },
+  { time: 146, text: "成淏：寫下您支持的團體名稱或專屬編號即可" },
+  { time: 149, text: "成淏：簡訊每則將收取 100 韓元費用" },
+  { time: 152, text: "相沅：直播投票請下載畫面下方指定的 APP" },
+  { time: 156, text: "相沅：為您支持的候補投下一票" },
+  { time: 158, text: "成淏：今天也請大家踴躍參與投票" },
+  { time: 160, text: "成淏：那麼現在正式開啟直播投票" },
+  { time: 163, text: "MC：直播投票開始" },
+  { time: 166, text: "相沅：接下來，即將橫掃歌壇的怪物新人們即將登場" },
+  { time: 170, text: "成淏：才剛踏入歌壇 出道第 6 天的 Girls' Generation - HRS" },
+  { time: 174, text: "相沅：還有散發青澀魅力的 TUIDE" },
+  { time: 176, text: "成淏：以及將創造全新未來的 AEN" },
+  { time: 179, endTime: 181,text: "MC：請出場" },
+  { time: 182, text: "成淏：相沅啊，你知道嗎，我發現我們兩個有很多共通點耶" },
+  { time: 186, text: "相沅：首先我們是同歲，而且又很可愛" },
+  { time: 190, text: "成淏：我們很可愛對吧" },
+  { time: 192, text: "成淏：這點確實沒錯" },
+  { time: 193, text: "成淏：不過我們家都有差12歲的兄弟姊妹喔" },
+  { time: 195, text: "相沅：啊，對耶" },
+  { time: 197, text: "成淏：而且" },
+  { time: 198, text: "相沅：而且" },
+  { time: 199, text: "成淏：我們都有讓人想依靠的寬闊肩膀" },
+  { time: 201, endTime: 203,text: "成淏：Music, Cue" },
+  { time: 221, text: "相沅：讓人想依靠的成淏，接下來要登場的舞台是" },
+  { time: 224, text: "成淏：接下來是像我們一樣預告著全新開始的 ICHILLIN' J  小分隊舞台" },
+  { time: 228, text: "相沅：還有變得更加成熟回歸的 TNX" },
+  { time: 230, text: "成淏：以及直球告白的 ODD YOUTH" },
+  { time: 233, endTime: 234,text: "MC：請出場" },
+  { time: 237, text: "相沅：成淏啊，你知道昨天是什麼日子嗎" },
+  { time: 239, text: "成淏：昨天，我不太清楚耶，昨天是什麼日子啊" },
+  { time: 241, text: "相沅：昨天是成淏你的生日" },
+  { time: 244, text: "相沅：雖然晚了一天，但還是生日快樂" },
+  { time: 246, text: "成淏：哇～真的太感謝了 不過……沒有禮物嗎" },
+  { time: 250, text: "相沅：當然有準備禮物" },
+];
+
+// =========================================================================
+</script>
+
+<style>
+/* 🎨 全域基礎樣式（深色背景） */
+body { 
+  background: #111; 
+  color: white; 
+  text-align: center; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+  margin: 0; 
+  overflow-x: hidden; 
+}
+
+/* 🌟 主題顏色設定（亮藍色風格） */
+:root { 
+  --main-color: #5698c3; 
+}
+
+/* 🔝 標題與字幕控制區 */
+#title { 
+  font-size: 28px; 
+  margin: 20px auto 15px auto; 
+  font-weight: bold; 
+  line-height: 1.5; 
+  max-width: 95%; 
+}
+
+#subtitle-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* 🎬 核心外層大框框：寬度限制為影片寬度，使其完美居中 */
+#main-layout {
+  position: relative;
+  max-width: 640px; 
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+#video-wrapper { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  width: 100%; 
+}
+
+/* 🎥 影片容器 */
+#video-container { 
+  position: relative; 
+  width: 100%; 
+  aspect-ratio: 16 / 9; 
+  background: black; 
+  border-radius: 10px; 
+  overflow: hidden; 
+}
+#player, #player iframe { 
+  width: 100%; 
+  height: 100%; 
+  display: block; 
+}
+
+/* 💬 浮動字幕樣式 */
+#subtitle { 
+  position: absolute; 
+  bottom: 12%; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  font-size: 24px; 
+  color: white; 
+  background: rgba(0,0,0,0.65); 
+  padding: 8px 20px; 
+  border-radius: 8px; 
+  white-space: pre-line; 
+  max-width: 70%; 
+  width: fit-content; 
+  pointer-events: none; 
+  z-index: 10; 
+  line-height: 1.4; 
+  display: none;
+  transition: font-size 0.2s ease;
+}
+
+/* 🎯 底部控制列（影片下方只留下全螢幕按鈕） */
+#bottom-block { 
+  width: 100%; 
+  margin-top: 20px; 
+  margin-bottom: 35px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+}
+
+/* 按鈕通用樣式 */
+.btn {
+  background: var(--main-color); 
+  color: white; 
+  border: none; 
+  padding: 8px 22px; 
+  border-radius: 6px; 
+  cursor: pointer; 
+  font-weight: bold; 
+  transition: 0.3s; 
+  font-size: 15px;
+}
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+/* 主按鈕（全螢幕）加寬加厚 */
+#fullscreenBtn { 
+  padding: 10px 35px;
+  font-size: 16px;
+}
+
+/* 🚪 進入全螢幕後在畫面右下方顯示的「退出全螢幕」按鈕（主色調） */
+#exitFullscreenBtn {
+  display: none; 
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 20; 
+  background: var(--main-color); 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+#exitFullscreenBtn:hover {
+  filter: brightness(1.1);
+}
+/* 當偵測到全螢幕狀態時，自動強制顯示該按鈕 */
+#video-container:fullscreen #exitFullscreenBtn,
+#video-container:-webkit-full-screen #exitFullscreenBtn {
+  display: block !important;
+}
+
+/* 📜 右側獨立時間軸選單 */
+#timeline-sidebar {
+  position: absolute;
+  left: 680px;      
+  top: 0;
+  width: 280px;
+  height: 360px;    
+  background: #222;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto; 
+  text-align: left;
+}
+
+/* 側欄標題區 */
+#sidebar-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--main-color); 
+  margin-bottom: 5px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 8px;
+}
+
+#timeline-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 📜 美化側欄滾動條 */
+#timeline-sidebar::-webkit-scrollbar { width: 6px; }
+#timeline-sidebar::-webkit-scrollbar-track { background: #222; }
+#timeline-sidebar::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
+#timeline-sidebar::-webkit-scrollbar-thumb:hover { background: var(--main-color); }
+
+/* 📱 RWD 行動裝置自動適應 */
+@media (max-width: 1024px) {
+  #main-layout { max-width: min(95vw, 640px); }
+  #timeline-sidebar {
+    position: static; 
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="title">260905 Show！音樂中心 MC 相沅 & 成淏</div>
+
+<div id="subtitle-controls">
+  <button class="btn" onclick="adjustSubtitle(4)">放大</button>
+  <button class="btn" onclick="adjustSubtitle(-4)">縮小</button>
+  <button class="btn" onclick="resetSubtitle()">復原</button>
+</div>
+
+<div id="main-layout">
+  
+  <div id="video-wrapper">
+    <div id="video-container">
+      <div id="player"></div>
+      <div id="subtitle"></div>
+      <button id="exitFullscreenBtn" class="btn" onclick="exitFullScreen()">退出全螢幕</button>
+    </div>
+    
+    <div id="bottom-block">
+      <button id="fullscreenBtn" class="btn" onclick="enterFullScreen()">全螢幕</button>
+    </div>
+  </div>
+
+  <div id="timeline-sidebar">
+    <div id="sidebar-title">時間軸目錄</div>
+    <div id="timeline-controls"></div>
+  </div>
+
+</div>
+
+<script>
+let player = null;
+const defaultFontSize = 24; 
+let currentFontSize = defaultFontSize;
+
+// 載入 YouTube API
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player("player", {
+    height: "360",
+    width: "640",
+    videoId: videoId,
+    playerVars: { 
+      'autoplay': 0, 
+      'controls': 1, 
+      'rel': 0, 
+      'modestbranding': 1, 
+      'origin': window.location.origin,
+      'fs': 0 
+    },
+    events: { 
+      'onReady': onPlayerReady 
+    }
+  });
+}
+function onPlayerReady(event) { 
+  initTimelineButtons();
+  initGithubFavicon(); 
+  resetSubtitle();
+  // 💡 建議：調整為 40ms，字幕偵測更順暢
+  setInterval(videoLoop, 40); 
+}
+
+function videoLoop() {
+  if (!player || typeof player.getCurrentTime !== 'function') return;
+  const currentTime = player.getCurrentTime();
+  updateSubtitle(currentTime);
+}
+// 🌐 核心功能：動態綁定 GitHub 頭像至 Favicon
+function initGithubFavicon() {
+  if (!githubUsername || githubUsername === "填入你的GitHub帳號") return;
+  
+  const githubAvatarUrl = `https://github.com/${githubUsername}.png`;
+  const faviconEl = document.getElementById("custom-favicon");
+  if (faviconEl) {
+    faviconEl.href = githubAvatarUrl;
+  }
+}
+
+// 更新字幕
+function updateSubtitle(t){
+  if (!subtitles || subtitles.length === 0) return;
+  let text = "";
+  for(let i = subtitles.length - 1; i >= 0; i--){
+    const sub = subtitles[i];
+    if(t >= sub.time){
+      if(sub.endTime && t >= sub.endTime) { text = ""; } 
+      else { text = sub.text; }
+      break; 
+    }
+  }
+  const subEl = document.getElementById("subtitle");
+  if(text === "") { subEl.style.display = "none"; } 
+  else { subEl.style.display = "block"; subEl.innerText = text; }
+}
+
+// 點擊跳轉時間
+function jumpToTime(seconds) {
+  if (player && typeof player.seekTo === 'function') {
+    player.seekTo(seconds, true);
+    if (player.getPlayerState() !== 1) player.playVideo();
+  }
+}
+
+// 生成右側時間軸按鈕
+function initTimelineButtons() {
+  const container = document.getElementById("timeline-controls");
+  if (!container || !timeLinks || timeLinks.length === 0) return;
+  container.innerHTML = "";
+  timeLinks.forEach(link => {
+    const btn = document.createElement("button");
+    btn.innerText = link.label;
+    btn.style.cssText = "background: #333; color: white; border: 1px solid #444; padding: 12px 15px; border-radius: 6px; cursor: pointer; transition: 0.3s; font-weight: bold; font-size: 14px; width: 100%; text-align: left;";
+    btn.onmouseover = () => { btn.style.background = "var(--main-color)"; btn.style.borderColor = "var(--main-color)"; };
+    btn.onmouseout = () => { btn.style.background = "#333"; btn.style.borderColor = "#444"; };
+    btn.onclick = () => jumpToTime(link.seconds);
+    container.appendChild(btn);
+  });
+}
+
+// 字幕放大縮小功能
+function adjustSubtitle(value) {
+  const subEl = document.getElementById("subtitle");
+  currentFontSize += value;
+  if (currentFontSize < 12) currentFontSize = 12; 
+  if (currentFontSize > 60) currentFontSize = 60; 
+  subEl.style.fontSize = currentFontSize + "px";
+}
+
+// 字幕復原功能
+function resetSubtitle() {
+  const subEl = document.getElementById("subtitle");
+  currentFontSize = defaultFontSize;
+  subEl.style.fontSize = currentFontSize + "px";
+}
+
+// 進入全螢幕
+function enterFullScreen() {
+  const elem = document.getElementById("video-container");
+  let req = elem.requestFullscreen || elem.webkitRequestFullscreen;
+  if (req) req.call(elem);
+}
+
+// 離開全螢幕
+function exitFullScreen() {
+  let exit = document.exitFullscreen || document.webkitExitFullscreen;
+  if (exit) exit.call(document);
+}
+</script>
+</body>
+</html>
